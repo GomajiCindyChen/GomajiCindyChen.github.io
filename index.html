@@ -4,20 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Test for Cookies</title>
+  <title>Test for SessionStorage</title>
 </head>
 <body>
   <div id="btn">Click me</div>
   <script>
     var btn = document.getElementById('btn');
 
-    if (document.cookie === "btn=hidden") {
+    if (sessionStorage.getItem("btn") === "hidden") {
       btn.style.display = 'none';
     }
 
     btn.addEventListener('click', function() {
       btn.style.display = 'none';
-      document.cookie = "btn=hidden";
+      sessionStorage.setItem("btn", "hidden");
     });
   </script>
 </body>
